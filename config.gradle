@@ -1,0 +1,166 @@
+ext{
+    /**
+     * 一些基础配置
+     */
+    android = [
+            /**
+             * SDK编译版本
+             * compileSdkVersion 告诉 Gradle 用哪个 Android SDK 版本编译你的应用。
+             * 使用任何新添加的 API 就需要使用对应 Level 的 Android SDK。
+             */
+            "compileSdkVersion":29,
+            /**
+             *  android构建工具的版本,在SDK Manager中安装选择版本，
+             *  buildToolsVersion的版本需要>=CompileSdkVersion;
+             *  高版本的build-tools 可以构建低版本编译的android程序；
+             */
+            "buildToolsVersion":"29.0.2",
+            /**
+             * 一般来讲就是包名
+             */
+            "applicationId":"com.cxl.jetpack.sample",
+            /**
+             * 最小的SDK版本
+             */
+            "minSdkVersion":24,
+            /**
+             * targetSdkVersion 是 Android 提供向前兼容的主要依据，
+             * 在应用的 targetSdkVersion 没有更新之前系统不会应用最新的行为变化。这允许你在适应新的行为变化之前就可以使用新的 API
+             */
+            "targetSdkVersion":29,
+            /**
+             * 版本号一般不展示给用户，用来程序内部判断
+             */
+            "versionCode":1,
+            /**
+             * 版本名称这个一般是展示给用户的
+             */
+            "versionName":"0.1"
+    ]
+
+    /**
+     * 一些依赖版本
+     */
+    dependVersion = [
+            //androidx.appcompat中的appcompat版本
+            "appcompatVersion":"1.1.0",
+            // androidx.core中的core-ktx版本
+            "coreKtxVersion":"1.1.0",
+            //androidx.constraintlayout中的constraintlayout版本
+            "constraintLayoutVersion":"1.1.3",
+            //Junit组件版本号
+            "junitVersion":"4.12",
+            //androidx.test.ext的junit版本
+            "androidTestJunitVirsion":"1.1.1",
+            //androidx.test.espresso中的espresso-core版本
+            "androidTestEspresso":"3.2.0",
+            //com.google.code.gson
+            "gsonVersion":"2.8.6",
+            //com.squareup.okhttp3
+            "okhttpVersion":"4.2.1",
+            //com.github.bumptech.glide
+            "glideVersion":"4.10.0",
+            //com.github.bumptech.glide:compiler
+            "glideCompilerVersion":"4.10.0",
+            //org.jetbrains.kotlin:kotlin-stdlib-jdk7
+            "kotlinVersion":"1.3.50",
+            //anko
+            "ankoVersion":"0.10.8",
+            // org.jetbrains.kotlinx：kotlinx-coroutines-android
+            "kotlinCoroutinesVersion":"1.3.2",
+            "brvhVersion":"2.9.50",
+            "cardviewVersion":"1.0.0",
+            "materialVersion":"1.0.0-rc01",
+            "coordinatorlayoutVersion":"1.0.0",
+            "multidexVersion":"2.0.0",
+            "recyclerviewVersion":"1.0.0",
+            "roomVersion":"2.2.1",
+            "lifecycleVersion":"2.1.0",
+            "navigationVersion":"2.1.0"
+    ]
+
+    defaultDepend= [
+            "stdlib":"org.jetbrains.kotlin:kotlin-stdlib-jdk7:${dependVersion.kotlinVersion}",
+            "appcompat":"androidx.appcompat:appcompat:${dependVersion.appcompatVersion}",
+            "core-ktx":"androidx.core:core-ktx:${dependVersion.coreKtxVersion}",
+            "constraintlayout":"androidx.constraintlayout:constraintlayout:${dependVersion.constraintLayoutVersion}",
+            "cardView":"androidx.cardview:cardview:${dependVersion.cardviewVersion}",
+            "material":"com.google.android.material:material:${dependVersion.materialVersion}",
+            "recyclerview":"androidx.recyclerview:recyclerview:${dependVersion.recyclerviewVersion}"
+    ]
+
+    /**
+     * 使用说明和依赖引用详见：https://developer.android.com/jetpack/androidx/releases/lifecycle
+     */
+    lifecycle = [
+            //viewModel 和 LiveData 合体版
+            "viewModel-And-LiveData":"androidx.lifecycle:lifecycle-extensions:${dependVersion.lifecycleVersion}",
+            //只包含ViewModel
+            "viewModel":"androidx.lifecycle:lifecycle-viewmodel-ktx:${dependVersion.lifecycleVersion}",
+            //只包含LiveData
+            "liveData":"androidx.lifecycle:lifecycle-livedata:${dependVersion.lifecycleVersion}",
+            //只包含lifecycle不包含viewModel和LiveData
+            "lifecycle-runtime":"androidx.lifecycle:lifecycle-runtime:${dependVersion.lifecycleVersion}",
+    ]
+
+    androidx = [
+            "appcompat":"androidx.appcompat:appcompat:${dependVersion.appcompatVersion}",
+            "core-ktx":"androidx.core:core-ktx:${dependVersion.coreKtxVersion}",
+            "constraintlayout":"androidx.constraintlayout:constraintlayout:${dependVersion.constraintLayoutVersion}",
+            "cardView":"androidx.cardview:cardview:${dependVersion.cardviewVersion}",
+            "material":"com.google.android.material:material:${dependVersion.materialVersion}",
+            "recyclerview":"androidx.recyclerview:recyclerview:${dependVersion.recyclerviewVersion}",
+            "multidex":"androidx.multidex:multidex:${dependVersion.multidexVersion}",
+            "coordinatorlayout":"androidx.coordinatorlayout:coordinatorlayout:${dependVersion.coordinatorlayoutVersion}",
+    ]
+
+    nav = [
+            "navigation-fragment-ktx":"androidx.navigation:navigation-fragment-ktx:${dependVersion.navigationVersion}",
+            "navigation-ui-ktx":"androidx.navigation:navigation-ui-ktx:${dependVersion.navigationVersion}",
+    ]
+
+    test = [
+            "junit":"junit:junit:${dependVersion.junitVersion}",
+            "androidTestJunit":"androidx.test.ext:junit:${dependVersion.androidTestJunitVirsion}",
+            "androidTestespresso":"androidx.test.espresso:espresso-core:${dependVersion.androidTestEspresso}"
+    ]
+
+    http =[
+            "okhttp":"com.squareup.okhttp3:okhttp:${dependVersion.okhttpVersion}"
+    ]
+
+    kotlin =[
+            "stdlib":"org.jetbrains.kotlin:kotlin-stdlib-jdk7:${dependVersion.kotlinVersion}",
+            "ankoCommons":"org.jetbrains.anko:anko-commons:${dependVersion.ankoVersion}",
+            "ankoSQLite":"org.jetbrains.anko:anko-sqlite:${dependVersion.ankoVersion}",
+            "coroutines":"org.jetbrains.kotlinx:kotlinx-coroutines-android:${dependVersion.kotlinCoroutinesVersion}"
+    ]
+
+    image = [
+            "glide":"com.github.bumptech.glide:glide:${dependVersion.glideVersion}",
+            "glideCompiler":"com.github.bumptech.glide:compiler${dependVersion.glideCompilerVersion}"
+    ]
+
+    other = [
+            "brvh":"com.github.CymChad:BaseRecyclerViewAdapterHelper:${dependVersion.brvhVersion}",
+            "gson":"com.google.code.gson:gson:${dependVersion.gsonVersion}",
+    ]
+    /**
+     * 使用说明和依赖引用详见：https://developer.android.google.cn/jetpack/androidx/releases/room
+     */
+    room = [
+            //基础
+            "runtime":"androidx.room:room-runtime:${dependVersion.roomVersion}",
+            //对于Kotlin，请使用kapt代替注解处理器
+            "compiler":"androidx.room:room-compiler:${dependVersion.roomVersion}",
+            //可选-Kotlin扩展和协程对Room的支持
+            "ktx":"androidx.room:room-ktx:${dependVersion.roomVersion}",
+            //可选-RxJava对Room的支持
+            "rxjava2":"androidx.room:room-rxjava2:${dependVersion.roomVersion}",
+            //可选-guava对Room的支持，包括Optional和ListenableFuture
+            "guava":"androidx.room:room-guava:${dependVersion.roomVersion}",
+            // 测试助手
+            "testing":"androidx.room:room-testing:${dependVersion.roomVersion}",
+    ]
+    defaultDependLibs = defaultDepend.values()
+}

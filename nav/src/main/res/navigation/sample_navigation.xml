@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sample_navigation"
+    app:startDestination="@id/home_dest">
+
+    <fragment
+        android:id="@+id/home_dest"
+        android:name="com.cxl.jetpack.nav.HomeFragment"
+        tools:layout="@layout/home_dest"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/open_one_action"
+            app:destination="@id/one_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/one_dest"
+        tools:layout="@layout/flow_step_one_dest"
+        android:name="com.cxl.jetpack.nav.OneFragment"
+        android:label="OneFragment" >
+        <action
+            android:id="@+id/action_one_dest_to_twoFragment"
+            app:destination="@+id/tow_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/deep_link_dest"
+        android:name="com.cxl.jetpack.nav.DeepLinkFragment"
+        android:label="DeepLinkFragment"
+        tools:layout="@layout/deep_link_dest">
+        <argument
+            android:name="dlValue"
+            android:defaultValue="Deep Link"
+            app:argType="string" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="cxl.cn/sample/nav/open-deep-link/{dlValue}" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/flow_step_two_dest"
+        android:id="@+id/tow_dest"
+        android:name="com.cxl.jetpack.nav.TwoFragment"
+        android:label="tow_dest" >
+        <argument
+            android:name="text"
+            app:argType="string"
+            android:defaultValue="2"/>
+        <action
+            android:id="@+id/action_tow_dest_to_home_dest"
+            app:enterAnim="@anim/slide_out_left"
+            app:popUpTo="@id/home_dest" />
+    </fragment>
+</navigation>
