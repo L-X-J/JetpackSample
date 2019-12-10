@@ -6,14 +6,14 @@ apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion rootProject.android.compileSdkVersion
-    buildToolsVersion rootProject.android.buildToolsVersion
+    compileSdkVersion AndroidConfig.compileSdkVersion
+    buildToolsVersion AndroidConfig.buildToolsVersion
     defaultConfig {
         applicationId "com.cxl.jetpack.nav"
-        minSdkVersion rootProject.android.minSdkVersion
-        targetSdkVersion rootProject.android.targetSdkVersion
-        versionCode rootProject.android.versionCode
-        versionName rootProject.android.versionName
+        minSdkVersion AndroidConfig.minSdkVersion
+        targetSdkVersion AndroidConfig.targetSdkVersion
+        versionCode 1
+        versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -32,9 +32,14 @@ android {
 }
 
 dependencies {
-    implementation rootProject.defaultDependLibs
-    implementation rootProject.nav.values()
-    testImplementation rootProject.test['junit']
-    androidTestImplementation rootProject.test['androidTestJunit']
-    androidTestImplementation rootProject.test['androidTestespresso']
+
+    implementation Libs.kotlin.std
+    implementation Libs.androidX.appCompat
+    implementation Libs.androidX.corektx
+    implementation Libs.androidX.constraintLayout
+    implementation Libs.navigation.uiKtx
+    implementation Libs.navigation.fragmentKtx
+    testImplementation Libs.junit.junit
+    androidTestImplementation Libs.junit.androidTestJunit
+    androidTestImplementation Libs.junit.androidTestEspresso
 }

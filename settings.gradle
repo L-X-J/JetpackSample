@@ -1,2 +1,2 @@
-include ':app', ':nav'
+include ':app', ':nav', ':buildSrc'
 rootProject.name='JetpackSample'
