@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion AndroidConfig.compileSdkVersion
+    buildToolsVersion AndroidConfig.buildToolsVersion
+    defaultConfig {
+        applicationId "com.cxl.jetpack.cx"
+        minSdkVersion AndroidConfig.minSdkVersion
+        targetSdkVersion AndroidConfig.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation Libs.kotlin.std
+    implementation Libs.androidX.appCompat
+    implementation Libs.androidX.corektx
+    implementation Libs.androidX.constraintLayout
+    implementation Libs.cameraX.core
+    implementation Libs.cameraX.camera2
+    testImplementation Libs.junit.junit
+    androidTestImplementation Libs.junit.androidTestJunit
+    androidTestImplementation Libs.junit.androidTestEspresso
+}

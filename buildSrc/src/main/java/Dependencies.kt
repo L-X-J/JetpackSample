@@ -14,7 +14,7 @@ object AndroidConfig {
     /**
      * 最小的SDK版本
      */
-    const val minSdkVersion = 24
+    const val minSdkVersion = 21
     /**
      * targetSdkVersion 是 Android 提供向前兼容的主要依据，
      * 在应用的 targetSdkVersion 没有更新之前系统不会应用最新的行为变化。这允许你在适应新的行为变化之前就可以使用新的 API
@@ -34,5 +34,6 @@ object Libs {
     val glide = Glide()
     val others = Others()
     val navigation = Navigation()
+    val cameraX = CameraX()
 }
 

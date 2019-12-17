@@ -47,4 +47,5 @@ object Versions {
     const val brvhVersion = "2.9.50"
     const val materialDialogsVersion = "3.1.1"
     const val navigationVersion = "2.1.0"
+    const val cameraXVersion = "1.0.0-alpha06"
 }

@@ -146,3 +146,9 @@ class Navigation {
     val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}"
     val uiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}"
 }
+
+//使用说明：https://developer.android.google.cn/training/camerax?hl=zh_CN
+class CameraX {
+    val core = "androidx.camera:camera-core:${Versions.cameraXVersion}"
+    val camera2 = "androidx.camera:camera-camera2:${Versions.cameraXVersion}"
+}
