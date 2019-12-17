@@ -2,7 +2,9 @@
 
 ## 前言
 这篇文章只是介绍CameraX的简单使用，其中包含相机预览、拍照、和简单的图片侦分析。
+
 参考自官方文档：https://developer.android.google.cn/training/camerax?hl=zh_CN
+
 本文章Demo代码：https://github.com/L-X-J/JetpackSample/tree/master/cx
 ## 概览(摘自官方文档)
 [![点击跳转到外网](./cxp.png)](https://youtu.be/QYkTXJ2TuiA)
